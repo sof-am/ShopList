@@ -1,0 +1,91 @@
+<!-- Validation failure messages -->
+<% if @food.errors.any? %>
+  <% @food.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Food</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_food" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for list_id -->
+      <div class="form-group">
+        <label for="list_id" class="control-label">
+          List
+        </label>
+
+        <input type="text" id="list_id" name="list_id" placeholder="List" class="form-control" value="<%= @food.list_id %>">
+      </div>
+
+      <!-- Label and input for user_id -->
+      <div class="form-group">
+        <label for="user_id" class="control-label">
+          User
+        </label>
+
+        <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @food.user_id %>">
+      </div>
+
+      <!-- Label and input for ideal_number -->
+      <div class="form-group">
+        <label for="ideal_number" class="control-label">
+          Ideal number
+        </label>
+
+        <input type="text" id="ideal_number" name="ideal_number" placeholder="Ideal number" class="form-control" value="<%= @food.ideal_number %>">
+      </div>
+
+      <!-- Label and input for safety_level -->
+      <div class="form-group">
+        <label for="safety_level" class="control-label">
+          Safety level
+        </label>
+
+        <input type="text" id="safety_level" name="safety_level" placeholder="Safety level" class="form-control" value="<%= @food.safety_level %>">
+      </div>
+
+      <!-- Label and input for current_number -->
+      <div class="form-group">
+        <label for="current_number" class="control-label">
+          Current number
+        </label>
+
+        <input type="text" id="current_number" name="current_number" placeholder="Current number" class="form-control" value="<%= @food.current_number %>">
+      </div>
+
+      <!-- Label and input for image -->
+      <div class="form-group">
+        <label for="image" class="control-label">
+          Image
+        </label>
+
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @food.image %>">
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @food.name %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Food
+      </button>
+      or
+      <a href="/foods">Cancel</a>
+    </form>
+  </div>
+</div>

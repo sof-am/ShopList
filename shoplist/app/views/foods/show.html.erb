@@ -1,0 +1,43 @@
+<div class="page-header">
+  <h3>Food #<%= @food.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt>List</dt>
+      <dd><%= @food.list_id %></dd>
+
+      <dt>User</dt>
+      <dd><%= @food.user_id %></dd>
+
+      <dt>Ideal number</dt>
+      <dd><%= @food.ideal_number %></dd>
+
+      <dt>Safety level</dt>
+      <dd><%= @food.safety_level %></dd>
+
+      <dt>Current number</dt>
+      <dd><%= @food.current_number %></dd>
+
+      <dt>Image</dt>
+      <dd><%= @food.image %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @food.name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/foods" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/foods/<%= @food.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_food/<%= @food.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
