@@ -1,19 +1,19 @@
 Rails.application.routes.draw do
   # Routes for the List resource:
   # CREATE
-  get "/lists/new", :controller => "lists", :action => "new"
-  post "/create_list", :controller => "lists", :action => "create"
+  get "/kitchen/new", :controller => "lists", :action => "new"
+  post "/create_kitchen", :controller => "lists", :action => "create"
 
   # READ
-  get "/lists", :controller => "lists", :action => "index"
-  get "/lists/:id", :controller => "lists", :action => "show"
+  get "/kitchen", :controller => "lists", :action => "index"
+  get "/kitchen/:id", :controller => "lists", :action => "show"
 
   # UPDATE
-  get "/lists/:id/edit", :controller => "lists", :action => "edit"
-  post "/update_list/:id", :controller => "lists", :action => "update"
+  get "/kitchen/:id/edit", :controller => "lists", :action => "edit"
+  post "/update_kitchen/:id", :controller => "lists", :action => "update"
 
   # DELETE
-  get "/delete_list/:id", :controller => "lists", :action => "destroy"
+  get "/delete_kitchen/:id", :controller => "lists", :action => "destroy"
   #------------------------------
 
   # Routes for the Food resource:
@@ -31,6 +31,12 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_food/:id", :controller => "foods", :action => "destroy"
+
+  # SHOPLIST
+  get "/shoplist", :controller => "foods", :action => "shoplist"
+
+  # CONSUMPTION
+  get "/consumption", :controller => "foods", :action => "consumption"
   #------------------------------
 
   devise_for :users

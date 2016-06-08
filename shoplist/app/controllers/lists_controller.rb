@@ -18,7 +18,7 @@ class ListsController < ApplicationController
     @list.list_name = params[:list_name]
 
     if @list.save
-      redirect_to "/lists", :notice => "List created successfully."
+      redirect_to "/kitchen", :notice => "Place created successfully."
     else
       render 'new'
     end
@@ -36,7 +36,7 @@ class ListsController < ApplicationController
     @list.list_name = params[:list_name]
 
     if @list.save
-      redirect_to "/lists", :notice => "List updated successfully."
+      redirect_to "/kitchen", :notice => "Place updated successfully."
     else
       render 'edit'
     end
@@ -47,6 +47,6 @@ class ListsController < ApplicationController
 
     @list.destroy
 
-    redirect_to "/lists", :notice => "List deleted."
+    redirect_to "/kitchen", :notice => "Place deleted."
   end
 end

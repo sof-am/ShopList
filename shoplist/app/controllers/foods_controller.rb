@@ -1,4 +1,12 @@
 class FoodsController < ApplicationController
+  def shoplist
+    @foods = Food.all
+  end
+
+  def consumption
+    @foods = Food.all
+  end
+
   def index
     @foods = Food.all
   end
