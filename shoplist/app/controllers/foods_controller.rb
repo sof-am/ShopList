@@ -3,7 +3,6 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
     @food.current_number = @food.current_number - 1
     @food.save
-    @foods = Food.all
     redirect_to "/consumption"
   end
 
@@ -11,8 +10,21 @@ class FoodsController < ApplicationController
     @food = Food.find(params[:id])
     @food.current_number = @food.current_number + 1
     @food.save
-    @foods = Food.all
     redirect_to "/consumption"
+  end
+
+  def shoplist_subtract
+    @food = Food.find(params[:id])
+    @food.current_number = @food.current_number + 1
+    @food.save
+    redirect_to "/shoplist"
+  end
+
+  def shoplist_add
+    @food = Food.find(params[:id])
+    @food.current_number = @food.current_number - 1
+    @food.save
+    redirect_to "/shoplist"
   end
 
   def shoplist
