@@ -68,7 +68,7 @@
       <!-- Label and input for safety_level -->
       <div class="form-group">
         <label for="safety_level" class="control-label">
-          Safety level
+          Safety level (if you ever go below this number, this item will show up as urgent on your ShopList)
         </label>
 
         <input type="text" id="safety_level" name="safety_level" placeholder="Safety level" class="form-control" value="<%= @food.safety_level %>">
@@ -82,9 +82,6 @@
 
         <input type="text" id="current_number" name="current_number" placeholder="Current number" class="form-control" value="<%= @food.current_number %>">
       </div>
-
-
-
 
 
       <button class="btn btn-success">

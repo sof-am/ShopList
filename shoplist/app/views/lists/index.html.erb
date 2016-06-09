@@ -15,6 +15,7 @@
       </tr>
 
       <% @lists.each do |list| %>
+      <% if list.user_id = current_user.id %>
       <tr>
         <td><img src="<%= list.image %>" width="40"></td>
         <td><%= list.list_name %></td>
@@ -24,6 +25,7 @@
           <a href="/delete_kitchen/<%= list.id %>" class="btn btn-primary" rel="nofollow">Delete</a>
         </td>
       </tr>
+      <% end %>
       <% end %>
     </table>
   </div>

@@ -18,7 +18,7 @@
       </tr>
 
       <% @foods.each do |food| %>
-      <% if food.current_number < food.safety_level %>
+      <% if food.current_number < food.safety_level && food.user_id = current_user.id %>
       <tr>
         <th>Yes!</th>
         <td><img src="<%= food.image %>" width="40"></td>
@@ -34,7 +34,7 @@
       <% end %>
 
       <% @foods.each do |food| %>
-      <% if food.current_number < food.ideal_number &&  food.current_number >= food.safety_level  %>
+      <% if food.current_number < food.ideal_number &&  food.current_number >= food.safety_level && food.user_id = current_user.id %>
       <tr>
         <th>No</th>
         <td><img src="<%= food.image %>" width="40"></td>
