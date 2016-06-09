@@ -18,18 +18,39 @@
       <!-- Hidden input for authenticity token to protect from forgery -->
       <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
-      <!-- Label and input for list_id -->
+      <!-- Label and input for name -->
       <div class="form-group">
-        <label for="list_id" class="control-label">
-          List
+        <label for="name" class="control-label">
+          Name
         </label>
 
-        <input type="text" id="list_id" name="list_id" placeholder="List" class="form-control" value="<%= @food.list.id %>">
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @food.name %>">
+      </div>
+
+      <!-- Label and input for image -->
+      <div class="form-group">
+        <label for="image" class="control-label">
+          Image url
+        </label>
+
+        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @food.image %>">
+      </div>
+
+      <!-- Label and input for list_id -->
+
+      <div class="form-group">
+        <label for="list_id" class=" control-label">
+          Place
+        </label>
+        <div class="">
+          <%= select_tag(:list_id, options_from_collection_for_select(List.all, :id, :list_name, @food.list_id), :class => "form-control") %>
+        </div>
+        or  <a href="/kitchen/neu" class="">Create new place</a>
       </div>
 
       <!-- Label and input for user_id -->
       <div class="form-group">
-        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @food.user.id %>">
+        <input type="hidden" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= current_user.id %>">
       </div>
 
       <!-- Label and input for ideal_number -->
@@ -59,23 +80,9 @@
         <input type="text" id="current_number" name="current_number" placeholder="Current number" class="form-control" value="<%= @food.current_number %>">
       </div>
 
-      <!-- Label and input for image -->
-      <div class="form-group">
-        <label for="image" class="control-label">
-          Image
-        </label>
 
-        <input type="text" id="image" name="image" placeholder="Image" class="form-control" value="<%= @food.image %>">
-      </div>
 
-      <!-- Label and input for name -->
-      <div class="form-group">
-        <label for="name" class="control-label">
-          Name
-        </label>
 
-        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @food.name %>">
-      </div>
 
       <button class="btn btn-warning">
         Update Food

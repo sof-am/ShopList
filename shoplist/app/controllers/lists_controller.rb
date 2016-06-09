@@ -9,7 +9,6 @@ class ListsController < ApplicationController
 
   def new
     @list = List.new
-    @list.user_id = params[:user_id]
   end
 
   def create
