@@ -29,6 +29,14 @@ Rails.application.routes.draw do
   get "/foods/:id/edit", :controller => "foods", :action => "edit"
   post "/update_food/:id", :controller => "foods", :action => "update"
 
+  # SUBTRACT/ADD - CONSUMPTION
+  get "/consumption/subtract/:id", :controller => "foods", :action => "consumption_subtract"
+  get "/consumption/add/:id", :controller => "foods", :action => "consumption_add"
+
+  # SUBTRACT/ADD - SHOPLIST
+  get "/shoplist/subtract/:id", :controller => "foods", :action => "shoplist_subtract"
+  get "/shoplist/add/:id", :controller => "foods", :action => "shoplist_add"
+
   # DELETE
   get "/delete_food/:id", :controller => "foods", :action => "destroy"
 

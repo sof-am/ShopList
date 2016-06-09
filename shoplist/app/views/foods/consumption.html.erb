@@ -23,11 +23,10 @@
         <td><%= food.list.list_name %></td>
         <td><%= food.current_number %></td>
 
-
         <td>
+          <a href="consumption/subtract/<%= food.id %>" class="btn btn-warning">-</a>
+          <a href="consumption/add/<%= food.id %>" class="btn btn-primary" rel="nofollow">+</a>
 
-          <a href="/foods/<%= food.id %>/edit" class="btn btn-warning">-</a>
-          <a href="/delete_food/<%= food.id %>" class="btn btn-primary" rel="nofollow">+</a>
         </td>
       </tr>
       <% end %>

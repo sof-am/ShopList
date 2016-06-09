@@ -1,4 +1,20 @@
 class FoodsController < ApplicationController
+  def consumption_subtract
+    @food = Food.find(params[:id])
+    @food.current_number = @food.current_number - 1
+    @food.save
+    @foods = Food.all
+    redirect_to "/consumption"
+  end
+
+  def consumption_add
+    @food = Food.find(params[:id])
+    @food.current_number = @food.current_number + 1
+    @food.save
+    @foods = Food.all
+    redirect_to "/consumption"
+  end
+
   def shoplist
     @foods = Food.all
   end
